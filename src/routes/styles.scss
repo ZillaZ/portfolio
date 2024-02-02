@@ -1,3 +1,4 @@
+$transparent: #000000a0;
 @use "sass:math";
 
 @font-face {
@@ -5,12 +6,107 @@
     src: url("/rodin.otf");
 }
 
+@media screen and (max-width: 768px) {    
+    footer {
+        text-align: center;
+    }
+
+    #presentation {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        font-size: large;
+        border-radius: 10px;
+        font-family: rodin;
+        flex-shrink: 1;
+        text-align: center;
+        h1, p {
+            color: white;
+        }
+    }
+
+    .button {
+        transition-duration: 0.5s;
+        background-color: #00000000;
+        border-style: none;
+        margin: 0 10%;
+        color: #e8f4f8;
+        position: static;
+    }
+
+    #everything {
+        display: grid;
+        flex-direction: column;
+    }
+
+    #content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;   
+    }
+
+    .content-div {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+    }
+    #listing-div {
+        overflow: scroll;
+        height: 100%;
+        width: 100%;
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .listing-element {
+        color: white;
+        margin-bottom: 1%;
+        padding: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: $transparent;
+        font-family: rodin;
+        overflow: scroll;
+        a {
+            font-size: large;
+            color: white;
+        }
+        img {
+            width: 30%;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        div {   
+            display: grid;
+            align-items: center;
+            font-size: small;
+        }
+    }    
+}
+
+#everything {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
 %hover {
     color: #00ADB5;
     transform: scale(1.05);
 }
-
-$transparent: #000000a0;
 
 %overflow {
     overflow: hidden;
@@ -36,23 +132,22 @@ video {
     overflow-y: scroll;
     height: 100%;
     width: 100%;
-}
-
-#socials {
-    height: 10%;
-    width: 50%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .listing-element {
-    height: 30%;
-    color: white;
     width: 90%;
-    margin: 0 auto 1%;
-    padding: math.div(20%, 5);
+    color: white;
+    margin-bottom: 1%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     background-color: $transparent;
     font-family: rodin;
-    overflow:hidden;
     a {
         font-size: large;
         color: white;
@@ -61,26 +156,29 @@ video {
         @extend %hover;
     }
     img {
-        margin: 2% auto;
-        border-radius: 15px;
-        float: left;
-        width: 30%;
-        height: 80%;
+        width: 20%;
+        margin: auto;
         object-fit: contain;
+        flex-shrink: 0;
+    }
+    div {
+        margin-left: 3%;
+        display: grid;
+        align-items: center;
+        font-size: small;
     }
 }
 
 footer {
-    position: absolute;
-    bottom: 5%;
-    left: 75%;
     color: white;
     font-family: rodin;
+    text-align: right;
 }
 
 body {
     margin: 0;
     padding: 0;
+    overflow:hidden;
 }
 
 #challenges-button {
@@ -96,9 +194,11 @@ button {
     font-size: large;
     position: static;
 }
+
 button:hover {
     @extend %hover;
 }
+
 nav {
     @extend %overflow;
     display: flex;
@@ -110,10 +210,9 @@ nav {
     background-color: $transparent;
     font-family: rodin;
 }
+
 #presentation {
     @extend %overflow;
-    @extend %intro-div-sizing;
-    margin: 15vh 2vw;
     color: black;
     display: flex;
     flex-direction: column;
@@ -122,31 +221,23 @@ nav {
     justify-content: center;
     padding: 0 20px;
     font-size: large;
-    float: left;
     border-radius: 10px;
     font-family: rodin;
+    flex-shrink: 0;
     h1, p {
         color: white;
     }
 }
 
 #content-wrapper {
-    width: 45vw;
-    height: 36vh;
     @extend %overflow;
-    position: absolute;
-    left: 53vw;
-    top: 11.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 87vh;
+    flex-grow: 1;
+    height: 100%;
     img {
         height: 50%;
         border-radius: 15px;
     }
-}
-
-footer {
-    text-align: right;
 }
