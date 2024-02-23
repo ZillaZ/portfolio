@@ -83,7 +83,7 @@ $transparent: #000000a0;
             object-fit: contain;
             flex-shrink: 0;
         }
-        div {   
+        div {
             display: grid;
             align-items: center;
             font-size: small;
@@ -163,6 +163,7 @@ video {
     }
     div {
         margin-left: 3%;
+        height: 20vh;
         display: grid;
         align-items: center;
         font-size: small;

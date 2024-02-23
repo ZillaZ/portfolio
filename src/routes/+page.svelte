@@ -39,6 +39,13 @@
                 {#if showing != Listing.None}
                 <div id="listing-div">
                 {#if showing == Listing.Projects}
+                   <div class="listing-element">
+                        <img alt="Rust-icon" src="/rust.png">
+                        <div>
+                            <a target="_blank" href="https://github.com/ZillaZ/cemu-virtual-controller"> Virtual Joystick </a>
+                            <p>Developed a custom virtual joystick program for Linux using libevdev. The program translates keyboard and mouse events into joystick events and allows for custom configuration.</p>
+                        </div>
+                    </div>
                     <div class="listing-element">
                         <img alt="Rust-icon" src="/rust.png">
                         <div>
@@ -55,6 +62,13 @@
                     </div>
                 {/if}
                 {#if showing == Listing.Challenges}
+               <div class="listing-element">
+                    <img alt="Rust-icon" src="/rust.png">
+                    <div>
+                        <a target="_blank" href="https://github.com/ZillaZ/llvm-fibonacci">[WIP] Rinha de Backend</a>
+                        <p>The challenge involves developing an API capable of managing thousands of concurrent requests while accurately processing data. The solution must incorporate Docker, load balancing, and a relational database of your choice</p>
+                    </div>
+                </div>
                 <div class="listing-element">    
                     <img alt="Rust-icon" src="/rust.png">
                     <div>
